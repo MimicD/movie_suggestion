@@ -17,7 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from rest_framework_simplejwt.views import TokenRefreshView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/users/', include('user.urls')),
+    path('api/movie_search_logic/', include('movie_search_logic.urls')),
+
+    #Refreshing Token
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token-refresh')
 ]

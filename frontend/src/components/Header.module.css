@@ -1,0 +1,18 @@
+.header {
+  position: relative;
+  height: 15%;        /* можно поменять на 100vh */
+  overflow: hidden;
+  padding: 35px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  margin: 0px 5%;
+}
+
+.logo,
+.header-right {
+  position: relative;
+  z-index: 1;
+}
+

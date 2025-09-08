@@ -1,0 +1,41 @@
+# Overall
+*.log
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
+.env
+*.env
+*.env.local
+*.env.*.local
+*.bak
+*.swp
+*~
+
+# Frontend (React)
+/frontend/node_modules/
+/frontend/dist/
+/frontend/.env
+/frontend/.env.local
+/frontend/.env.*.local
+/frontend/coverage/
+/frontend/.cache/
+/frontend/package-lock.json
+
+# Backend (Django/DRF)
+/backend/__pycache__/
+/backend/*.pyc
+/backend/.env
+/backend/.venv/
+/backend/venv/
+/backend/env/
+/backend/.python-version
+/backend/staticfiles/
+/backend/media/
+/backend/*.log
+/backend/coverage/
+/backend/.pytest_cache/
+/backend/.mypy_cache/
+/backend/.tox/
+
+*.sqlite3
