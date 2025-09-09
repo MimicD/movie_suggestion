@@ -1,19 +1,12 @@
 import { Link } from "react-router-dom";
 
 import { Header } from "../components/Header.jsx";
-import { ManyButtons } from "../components/ManyButtons";
-import { Button } from "../components/Button";
+
 
 export function RegisterPage() {
     return (
         <>
-            <Header>
-                <ManyButtons>
-                    <Link to={"/"}>
-                        <Button button_text="Go Home" />
-                    </Link>
-                </ManyButtons>
-            </Header>
+            <Header />
             <h1>Register</h1>
         </>
     );
