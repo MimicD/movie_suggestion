@@ -1,0 +1,10 @@
+.centerForm {
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 5%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 5%;
+}

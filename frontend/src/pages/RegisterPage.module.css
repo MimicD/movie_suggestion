@@ -1,0 +1,21 @@
+.centerForm {
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 5%;
+    text-align: center;
+}
+
+.inputFrom {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 5%;
+}
+
+.inputFrom input {
+    max-width: 100%;
+}
+
+.button {
+    max-width: 50px;
+}

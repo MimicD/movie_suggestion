@@ -33,13 +33,13 @@ export function AuthProvider({ children }) {
             if (!refresh) return;
 
             try {
-                const res = await fetch("http://localhost:8000/api/token/refresh/", {
+                const response = await fetch("http://localhost:8000/api/token/refresh/", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ refresh }),
                 });
-                if (!res.ok) throw new Error("Refresh failed");
-                const data = await res.json();
+                if (!response.ok) throw new Error("Refresh failed");
+                const data = await response.json();
                 localStorage.setItem("access", data.access);
                 setIsAuth(true);
                 } catch (err) {

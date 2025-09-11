@@ -2,7 +2,10 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../components/AuthContext";
 import { Header } from "../components/Header.jsx";
-import { Button } from "../components/Button";
+import { ButtonSubmit } from "../components/Button";
+import { TextInput } from "../components/Input.jsx";
+
+import classes from "./RegisterPage.module.css";
 
 
 export function RegisterPage() {
@@ -45,13 +48,14 @@ export function RegisterPage() {
     return (
         <>
             <Header />
-            <h1>Register</h1>
-            <form onSubmit={handleRegister}>
-                <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
-                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
-                <input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} placeholder="Confirm Password" />
-                <Button button_text="Register" />
-            </form>
+            <div className={classes.centerForm}>
+                <form className={classes.inputFrom} onSubmit={handleRegister}>
+                    <TextInput type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username"/>
+                    <TextInput type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password"/>
+                    <TextInput type="text" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} placeholder="Confirm Password"/>
+                    <ButtonSubmit button_text="Register" />
+                </form>
+            </div>
             {error && <p style={{ color: "red" }}>{error}</p>}
         </>
     );

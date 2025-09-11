@@ -2,13 +2,14 @@ import classes from "./Header.module.css";
 import { useAuth } from "./AuthContext";
 import { Link } from "react-router-dom";
 import { Button } from "./Button";
+import logo from "../assets/Logo.png";
 
 export function Header() {
     const { isAuth, logout } = useAuth();
 
     return (
         <div className={classes.header}>
-            <h3 className={classes.logo}>MovieSuggestor</h3>
+            <img className={classes.logo} src={logo}/>
             <div className={classes["header-right"]}>
                 {isAuth ? (
                     <>
@@ -18,12 +19,9 @@ export function Header() {
                             }}
                         />
                         
-                        <Link to={"/"}>
-                            <Button button_text="Go Home" onClick={() => {
-                                console.log("Clicked logout");
-                                }}
-                            />
-                        </Link>
+                        {
+                        //<Link to={"/"}><Button button_text="Go Home" /></Link>
+                        }
                     </>
                 ) : (
                     <>

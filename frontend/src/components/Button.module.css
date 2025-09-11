@@ -12,8 +12,8 @@
 /* button styling */
 .button {
   --border-right: 6px;
-  --text-stroke-color: rgba(255,255,255,0.6);
-  --animation-color: #7077f9;
+  --text-stroke-color: rgba(255,255,255,0.0);
+  --animation-color: #eaa943;
   --fs-size: 2em;
   letter-spacing: 3px;
   text-decoration: none;
@@ -43,4 +43,43 @@
 .button:hover .hover-text {
   width: 100%;
   filter: drop-shadow(0 0 23px var(--animation-color))
+}
+
+
+
+
+/*ButtonSubmit*/
+.buttonSubmit {
+  background: var(--color-back);
+  border: 2px solid rgba(52,63,82,255);
+  border-radius: 0.5em;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 0.7em 1.7em;
+  outline: none;
+  user-select: none;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.buttonSubmit:hover {
+    border: 2px solid #eaa943;
+    box-shadow: 2px 2px 2px #eaa943;
+    transition: 0.4s;
+}
+
+
+.buttonSubmit_text {
+  color: rgba(235,166,66,255);
+  font-weight: 700;
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+.buttonSubmit:hover .buttonSubmit_text {
+  transform: scale(0.9);
+}
+
+.buttonSubmit:active .buttonSubmit_text {
+  transform: scale(0.8);
 }

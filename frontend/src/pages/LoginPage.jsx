@@ -2,7 +2,10 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../components/AuthContext";
 import { Header } from "../components/Header.jsx";
-import { Button } from "../components/Button";
+import { ButtonSubmit } from "../components/Button";
+import { TextInput } from "../components/Input.jsx";
+
+import classes from "./LoginPage.module.css";
 
 export function LoginPage() {
     const [username, setUsername] = useState("");
@@ -24,7 +27,7 @@ export function LoginPage() {
             if (!response.ok) throw new Error("Invalid credentials");
 
             const data = await response.json();
-            login(data.access, data.refresh); // call login() from context
+            login(data.token.access, data.token.refresh); // call login() from context
             navigate("/");
         } catch (err) {
             setError(err.message);
@@ -34,13 +37,14 @@ export function LoginPage() {
     return (
         <>
             <Header />
-            <h1>Login</h1>
-            <form onSubmit={handleLogin}>
-                <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username" />
-                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
-                <Button button_text="Login" />
-            </form>
-            {error && <p style={{ color: "red" }}>{error}</p>}
+            <div className={classes.centerForm}>
+                <form className={classes.inputFrom} onSubmit={handleLogin}>
+                    <TextInput type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username"/>
+                    <TextInput type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password"/>
+                    <ButtonSubmit className={classes.button} button_text="Login" />
+                </form>
+                {error && <p style={{ color: "red" }}>{error}</p>}
+            </div>
         </>
     );
 }
